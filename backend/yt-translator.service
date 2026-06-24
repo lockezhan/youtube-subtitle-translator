@@ -1,0 +1,15 @@
+[Unit]
+Description=YouTube AI Subtitle Translation Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/yt-subtitle-translator
+ExecStart=/root/yt-subtitle-translator/venv/bin/python main.py
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
